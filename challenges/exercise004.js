@@ -1,40 +1,40 @@
 function findSmallNums(nums) {
-  if (!nums) throw new Error("nums is required");
-  if (nums.length === 0) return [];
-  return nums.filter((item) => item < 1 );
+	if (!nums) throw new Error("nums is required");
+	if (nums.length === 0) return [];
+	return nums.filter((item) => item < 1);
 }
 
 function findNamesBeginningWith(names, char) {
-  if (!names) throw new Error("names is required");
-  if (!char) throw new Error("char is required");
-  return names.filter((item) => item[0] === char);
+	if (!names) throw new Error("names is required");
+	if (!char) throw new Error("char is required");
+	return names.filter((item) => item[0] === char);
 }
 
 function findVerbs(words) {
-  if (!words) throw new Error("words is required");
-  return words.filter((item) => item.substring(0, 3) === "to ");
+	if (!words) throw new Error("words is required");
+	return words.filter((item) => item.substring(0, 3) === "to ");
 }
 
 function getIntegers(nums) {
-  if (!nums) throw new Error("nums is required");
-  return nums.filter((item) => item * 10 % 10 === 0);
+	if (!nums) throw new Error("nums is required");
+	return nums.filter((item) => item * 10 % 10 === 0);
 }
 
 function getCities(users) {
-  if (!users) throw new Error("users is required");
-  return users.map((item) => item.data.city.displayName);
+	if (!users) throw new Error("users is required");
+	return users.map((item) => item.data.city.displayName);
 }
 
 function getSquareRoots(nums) {
-  if (!nums) throw new Error("nums is required");
-  return nums.map((item) => Math.round(Math.sqrt(item) * 100) / 100);
+	if (!nums) throw new Error("nums is required");
+	return nums.map((item) => Math.round(Math.sqrt(item) * 100) / 100);
 }
 
 function findSentencesContaining(sentences, str) {
-  if (!sentences) throw new Error("sentences is required");
-  if (!str) throw new Error("str is required");
-  var upperCaseStr = str.toUpperCase()
-  return sentences.filter((item) => item.toUpperCase().includes(upperCaseStr));
+	if (!sentences) throw new Error("sentences is required");
+	if (!str) throw new Error("str is required");
+	var upperCaseStr = str.toUpperCase()
+	return sentences.filter((item) => item.toUpperCase().includes(upperCaseStr));
 }
 
 function getLongestSides(triangles) {

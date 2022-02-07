@@ -31,7 +31,7 @@ function getIntegers(nums) {
 	if (!nums) throw new Error("nums is required");
 	var arr = []
 	for (var i = 0; i < nums.length; i++) {
-		if (nums[i]*10%10 === 0) arr.push(nums[i]);
+		if (nums[i] * 10 % 10 === 0) arr.push(nums[i]);
 	}
 	return arr;
 }
@@ -49,7 +49,7 @@ function getSquareRoots(nums) {
 	if (!nums) throw new Error("nums is required");
 	var arr = []
 	for (var i = 0; i < nums.length; i++) {
-		arr.push(Math.round(Math.sqrt(nums[i])*100)/100);
+		arr.push(Math.round(Math.sqrt(nums[i]) * 100) / 100);
 	}
 	return arr;
 }

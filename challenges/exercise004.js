@@ -59,13 +59,8 @@ function findSentencesContaining(sentences, str) {
 	if (!str) throw new Error("str is required");
 	var arr = [], upperCaseStr = str.toUpperCase()
 	for (var i = 0; i < sentences.length; i++) {
-		var tempSentence = sentences[i].toUpperCase().split(" ");
-		for (var j = 0; j < tempSentence.length; j++) {
-			if (tempSentence[j].includes(upperCaseStr)) {
-				arr.push(sentences[i]);
-				break;
-			}
-		}
+		if (sentences[i].toUpperCase().includes(upperCaseStr))
+			arr.push(sentences[i]);
 	}
 	return arr;
 }

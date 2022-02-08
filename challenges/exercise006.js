@@ -5,7 +5,7 @@
  * @returns {Number}
  */
 const sumMultiples = arr => {
-  if (arr === undefined) throw new Error("arr is required");
+	if (arr === undefined) throw new Error("arr is required");
 	if (!Array.isArray(arr)) throw new Error("An array is required");
 
 	arr = arr.filter((item) => item % 3 === 0 | item % 5 === 0);
@@ -19,7 +19,7 @@ const sumMultiples = arr => {
  * @returns {Boolean}
  */
 const isValidDNA = str => {
-  if (str === undefined) throw new Error("str is required");
+	if (str === undefined) throw new Error("str is required");
 	if (str.length === 0) return false;
 	const regex = new RegExp(/[^CGTA]/g);
 	return !regex.test(str);
@@ -31,7 +31,7 @@ const isValidDNA = str => {
  * @returns {String}
  */
 const getComplementaryDNA = str => {
-  if (str === undefined) throw new Error("str is required");
+	if (str === undefined) throw new Error("str is required");
 	if (str.length === 0) return "";
 	const complementaryType = new Map();
 	complementaryType.set("T", "A");
@@ -47,10 +47,10 @@ const getComplementaryDNA = str => {
  * @returns {Boolean}
  */
 const isItPrime = n => {
-  if (n === undefined) throw new Error("n is required");
-	for(var i = 2, s = Math.sqrt(n); i <= s; i++)
-		if(n % i === 0) return false; 
-	return n > 1;	
+	if (n === undefined) throw new Error("n is required");
+	for (var i = 2, s = Math.sqrt(n); i <= s; i++)
+		if (n % i === 0) return false;
+	return n > 1;
 };
 
 /**
@@ -65,8 +65,8 @@ const isItPrime = n => {
  * @returns {Array}
  */
 const createMatrix = (n, fill) => {
-  if (n === undefined) throw new Error("n is required");
-  if (fill === undefined) throw new Error("fill is required");
+	if (n === undefined) throw new Error("n is required");
+	if (fill === undefined) throw new Error("fill is required");
 	if (n === 0) return [];
 	var arr = [], result = [];
 	for (var i = 0; i < n; i++) {
@@ -91,18 +91,18 @@ const createMatrix = (n, fill) => {
  * @returns {Boolean}
  */
 const areWeCovered = (staff, day) => {
-  if (staff === undefined) throw new Error("staff is required");
+	if (staff === undefined) throw new Error("staff is required");
 	if (staff.length === 0) throw new Error("staff is required");
-  if (day === undefined) throw new Error("day is required");
+	if (day === undefined) throw new Error("day is required");
 	var formattedDay = day[0].toUpperCase() + day.slice(1).toLowerCase();
 	return staff.filter((item) => item.rota.includes(formattedDay)).length >= 3 ? true : false;
 };
 
 module.exports = {
-  sumMultiples,
-  isValidDNA,
-  getComplementaryDNA,
-  isItPrime,
-  createMatrix,
-  areWeCovered
+	sumMultiples,
+	isValidDNA,
+	getComplementaryDNA,
+	isItPrime,
+	createMatrix,
+	areWeCovered
 };

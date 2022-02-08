@@ -40,7 +40,7 @@ function findSentencesContaining(sentences, str) {
 function getLongestSides(triangles) {
 	if (!triangles) throw new Error("triangles is required");
 	return triangles.map((item) => {
-		return item.reduce((previous, current) => previous < current ? current : previous);
+		return Math.max(...item);
 	});
 }
 

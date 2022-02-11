@@ -48,7 +48,7 @@ const getComplementaryDNA = str => {
  */
 const isItPrime = n => {
 	if (n === undefined) throw new Error("n is required");
-	for (var i = 2, s = Math.sqrt(n); i <= s; i++)
+	for (let i = 2, s = Math.sqrt(n); i <= s; i++)
 		if (n % i === 0) return false;
 	return n > 1;
 };
@@ -68,11 +68,11 @@ const createMatrix = (n, fill) => {
 	if (n === undefined) throw new Error("n is required");
 	if (fill === undefined) throw new Error("fill is required");
 	if (n === 0) return [];
-	var arr = [], result = [];
-	for (var i = 0; i < n; i++) {
+	let arr = [], result = [];
+	for (let i = 0; i < n; i++) {
 		arr.push(fill);
 	}
-	for (var j = 0; j < n; j++) {
+	for (let j = 0; j < n; j++) {
 		result.push(arr);
 	}
 	return result;
@@ -94,7 +94,7 @@ const areWeCovered = (staff, day) => {
 	if (staff === undefined) throw new Error("staff is required");
 	if (staff.length === 0) throw new Error("staff is required");
 	if (day === undefined) throw new Error("day is required");
-	var formattedDay = day[0].toUpperCase() + day.slice(1).toLowerCase();
+	let formattedDay = day[0].toUpperCase() + day.slice(1).toLowerCase();
 	return staff.filter((item) => item.rota.includes(formattedDay)).length >= 3 ? true : false;
 };
 

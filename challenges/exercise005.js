@@ -1,7 +1,7 @@
 const findNextNumber = (nums, n) => {
 	if (nums === undefined) throw new Error("nums is required");
 	if (n === undefined) throw new Error("n is required");
-	var index = nums.indexOf(n);
+	let index = nums.indexOf(n);
 	return index === -1 ?
 		null : index + 1 > nums.length - 1 ?
 			null : nums[index + 1];
@@ -14,7 +14,7 @@ const count1sand0s = str => {
 
 const reverseNumber = n => {
 	if (n === undefined) throw new Error("n is required");
-	var reverseNum = 0;
+	let reverseNum = 0;
 	while (n) {
 		reverseNum = (reverseNum * 10) + (n % 10);
 		n = Math.floor(n / 10);
@@ -39,8 +39,8 @@ const arrShift = arr => {
 const findNeedle = (haystack, searchTerm) => {
 	if (haystack === undefined) throw new Error("haystack is required");
 	if (searchTerm === undefined) throw new Error("searchTerm is required");
-	var upperCaseSearch = searchTerm.toUpperCase();
-	for (var key in haystack) {
+	let upperCaseSearch = searchTerm.toUpperCase();
+	for (let key in haystack) {
 		if (typeof haystack[key] === "string")
 			if (haystack[key].toUpperCase().includes(upperCaseSearch)) return true;
 	}
@@ -49,9 +49,9 @@ const findNeedle = (haystack, searchTerm) => {
 
 const getWordFrequencies = str => {
 	if (str === undefined) throw new Error("str is required");
-	var splitStr = str.toLowerCase().replace(/[^a-zA-Z0-9 ]/g, "").split(" ");
-	var key = [...new Set(splitStr)];
-	var obj = {};
+	let splitStr = str.toLowerCase().replace(/[^a-zA-Z0-9 ]/g, "").split(" ");
+	let key = [...new Set(splitStr)];
+	let obj = {};
 	key.forEach((item) => {
 		obj[item] = splitStr.filter((strItem) => item.toUpperCase() === strItem.toUpperCase()).length;
 	});

@@ -53,7 +53,7 @@ function getMeanScore(scores) {
 
 function simpleFizzBuzz(n) {
   if (n === undefined) throw new Error("n is required");
-	var result = '';
+	let result = '';
   if (n % 3 === 0) 
 		result += "fizz";
 	if (n % 5 === 0)

@@ -5,7 +5,7 @@
 const sumDigits = n => {
 	if (n === undefined) throw new Error("n is required");
 	if (!Number.isInteger(n) | n < 0) throw new Error("An positive integer is required");
-	var result = 0;
+	let result = 0;
 	while (n) {
 		result += n % 10;
 		n = Math.floor(n / 10);
@@ -26,7 +26,7 @@ const createRange = (start, end, step) => {
 	if (end === undefined) throw new Error("end is required");
 	if (step === undefined) step = 1;
 	else if (step <= 0) throw new Error("step should be greater than 0");
-	var result = [start];
+	let result = [start];
 	while (start + step <= end) {
 		start = parseFloat((start + step).toFixed(2));
 		result.push(start);
@@ -66,12 +66,11 @@ const createRange = (start, end, step) => {
 const getScreentimeAlertList = (users, date) => {
 	if (users === undefined) throw new Error("users is required");
 	if (date === undefined) throw new Error("date is required");
-	// var onlineUser = users.filter((item) => item.screenTime.date === date);
 	return users.flatMap((item) => {
-		for (var i = 0; i < item.screenTime.length; i++) {
+		for (let i = 0; i < item.screenTime.length; i++) {
 			if (item.screenTime[i].date === date) {
-				var totalScreenTime = 0;
-				for (var key in item.screenTime[i].usage) {
+				let totalScreenTime = 0;
+				for (let key in item.screenTime[i].usage) {
 					totalScreenTime += item.screenTime[i].usage[key];
 				}
 				if (totalScreenTime > 100) return item.username;
@@ -94,7 +93,7 @@ const getScreentimeAlertList = (users, date) => {
  */
 const hexToRGB = hexStr => {
 	if (hexStr === undefined) throw new Error("hexStr is required");
-	var result = "rgb(";
+	let result = "rgb(";
 	result += parseInt(hexStr.substring(1, 3), 16).toString() + ',';
 	result += parseInt(hexStr.substring(3, 5), 16).toString() + ',';
 	result += parseInt(hexStr.substring(5, 7), 16).toString() + ')';
@@ -115,7 +114,7 @@ const findWinner = board => {
 	if (board === undefined) throw new Error("board is required");
 	const winningPattern = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]];
 	board = board.flat();
-	for (var i = 0; i < winningPattern.length; i++) {
+	for (let i = 0; i < winningPattern.length; i++) {
 		if (board[winningPattern[i][0]] === null)
 			continue;
 		if (board[winningPattern[i][0]] === board[winningPattern[i][1]] & board[winningPattern[i][1]] === board[winningPattern[i][2]]) {
